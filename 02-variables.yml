@@ -1,0 +1,53 @@
+- name: playbook to learn variables - play level 
+  hosts: localhost
+  connection: local
+  vars:
+    url: play.example.com
+  tasks: 
+    - name: print url variable
+      debug:
+        msg: url - {{ url }}
+
+
+#printing variable at task level
+- name: task level variables
+  hosts: localhost
+  connection: local
+  tasks: 
+    - name: print url variable
+      debug:
+        msg: url - {{ url }}
+      vars:
+        url: task.example.com
+
+#variable data types
+- name: playbook to learn variables data types 
+  hosts: localhost
+  connection: local
+  vars:
+    x: string
+    y: 100
+    z: true
+    a: no
+  tasks: 
+    - name: print variables
+      debug:
+        msg: x - {{ x }}, y - {{ y }}, z - {{ z }}, a - {{ a }}
+
+#variable declaration types
+- name: playbook to learn variables data types 
+  hosts: localhost
+  connection: local
+  vars:
+    x: string
+    y: 
+      - 100
+      - 200
+    z: 
+      url: map.example.com
+      domain: example.com
+  tasks: 
+    - name: print variables
+      debug:
+        msg: x - {{ x }}, y - {{ y[0] }}, z - {{ z["url"] }}, z2 - {{ z["domain"] }}
+

@@ -50,5 +50,3 @@
     - name: print variables
       debug:
         msg: x - {{ x }}, y - {{ y[0] }}, z - {{ z["url"] }}, z2 - {{ z["domain"] }}
-        msg: "{{ x }}"
-

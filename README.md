@@ -24,3 +24,8 @@ key:        ( Map )
 # 4. Play Level
 # 5. Inventory level
 # 6. Error saying variable does not declared
+
+
+# If our value is starting with a variable then we require quotes
+# msg: {{ URL }}   -> This require quotes
+# msg: url - {{ URL }}   -> This does not require quotes

@@ -1,0 +1,11 @@
+- name: register demo
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: register uptime data 
+      shell: uptime 
+      register: out 
+
+    - name: print the registered output 
+      debug:
+        msg: "{{ out }}"

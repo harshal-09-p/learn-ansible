@@ -1,0 +1,28 @@
+#conditions 
+
+- name: learn conditions in ansible
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: check if given string is vegetable 
+      debug:
+        msg: vegatables is potato
+      when: vegetables == "yes"
+
+    - name: check if given string is fruit 
+      debug:
+        msg: fruit is apple
+      when: fruits == "yes"
+
+    #check for boolean in when condition
+    - name: check if given string is vegetable 
+      debug:
+        msg: vegatables is potato
+      when: vegetables | bool
+    
+    #check for arthmetic expression 
+    - name: number comparison
+      debug:
+        msg: "{{ num }} is greater than zero 0"
+      when: num | int > 0
+    #converts num string to int using | pipe.

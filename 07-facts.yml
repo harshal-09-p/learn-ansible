@@ -1,0 +1,11 @@
+- name: facts demo
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: print facts 
+      debug:
+        msg: "{{ ansible_virtualization_type }}"
+
+    - name: print IP 
+      debug:
+        msg: "{{ ansible_default_ipv4 }}"

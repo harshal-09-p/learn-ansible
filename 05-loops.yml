@@ -1,0 +1,23 @@
+#loops 
+
+- name: learn conditions in ansible
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: print given vegetables names 
+      debug:
+        msg: vegatables name is {{ item }}
+      loop:
+        - potato
+        - tomato
+        - onion
+        - beans
+
+    - name: print vegetable names and quantity - array-- key & value 
+      debug:
+        msg: vegetable name is {{ item["name"] }} and quantity - {{ item.quantity }}
+      loop:
+        - { name: potato, quantity: 100 }
+        - { name: tomato, quantity: 200 }
+        - { name: onion, quantity: 300 }
+        - { name: beans, quantity: 400 }

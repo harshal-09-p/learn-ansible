@@ -1,0 +1,6 @@
+#parallel execution of task on multiple servers 
+- name: parallel
+  hosts: all
+  tasks:
+    - name: sleep
+      shell: sleep 30

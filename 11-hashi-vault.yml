@@ -1,4 +1,4 @@
-- naem: access hashi vault values 
+- name: access hashi vault values 
   hosts: localhost
   connection: local
   tasks:

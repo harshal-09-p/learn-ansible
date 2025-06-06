@@ -1,8 +1,6 @@
 - name: access hashi vault values 
   hosts: localhost
   connection: local
-  vars:
-    ansible_python_interpreter: /usr/bin/python3.9
   tasks:
     - name: access demo user name and password
       debug:

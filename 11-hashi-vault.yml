@@ -1,0 +1,7 @@
+- naem: access hashi vault values 
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: access demo user name and password
+      debug:
+        msg: "{{ lookup('community.hashi_vault.hashi_vault', 'secret=demo/data/ssh:username token={{ token }} url=http://vault.harshaldevops.online:8200') }}"

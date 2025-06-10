@@ -1,0 +1,11 @@
+- name: rub docker example
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: docker run nginx container module execution
+      community.docker.docker_container:
+        name: nginx-sample
+        image: docker.io/nginx
+        state: started
+        ports:
+          - "8080:80"
